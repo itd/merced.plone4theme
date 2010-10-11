@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/xdv"
+    xmlns:css="http://namespaces.plone.org/xdv+css"
+    >
+    <replace content='/html/head/title' theme='/html/head/title' />
+
+    <prepend  content="/html/head/base"   theme="/html/head" />
+    <prepend  content="/html/head/meta"   theme="/html/head" />
+    <prepend  content='/html/head/style'  theme='/html/head' />
+    <prepend  content='/html/head/script' theme='/html/head' />
+    <append  content="/html/head/link"   theme="/html/head" />
+    <!-- Copy over the id/class attributes on the body tag, this is important
+         for Kupu and per-section styling -->
+    <prepend content="/html/body/@class" theme="/html/body" />
+    <prepend content="/html/body/@id"    theme="/html/body" />
+    <prepend content="/html/body/@dir"   theme="/html/body" />
+
+
+
+   <!--theme href="static/frontpage.html" css:if-content="body.section-front-page"/ -->
+
+
+    <replace content="//*[@id='portal-header']"
+        theme="//*[@id='portal-top']" />
+
+
+    <!-- Logo -->
+    <prepend content="//*[@id='portal-logo']/attribute::href"
+             theme="//*[@id='logo']/a" />
+    <prepend content="//*[@id='portal-logo']/attribute::accesskey"
+             theme="//*[@id='logo']/a" />
+    <prepend content="//*[@id='portal-logo']/img/attribute::title"
+             theme="//*[@id='logo']/a" />
+
+    <!-- The login and admin stuff  -->
+    <prepend content="//*[@id='portal-personaltools-wrapper']"
+            theme="//*[@id='container']" />
+
+    <!-- Global navigation -->
+    <copy content='//*[@id="portal-globalnav"]/li' theme='//*[@id="navigation"]/ul' />
+
+    <!-- Document Content -->
+    <copy content="//*[@id='portal-column-content']/*"
+        theme="//*[@id='editable-content-area']" />
+    <append content="//*[contains(concat(' ', normalize-space(@class), ' '), ' managePortletsFallback ')]"
+            theme="//*[@id='document-wrapper']" />
+
+    <!-- left-column -->
+    <copy content="//*[@id='portal-column-one']/*"
+        theme="//*[@id='left-column']" />
+
+    <!-- sidebar -->
+    <copy content="//*[@id='portal-column-two']/*"
+        theme="//*[@id='sidebar']" />
+
+    <!-- navigation portlet mojo -->
+    <replace content="//*/dl[@class='portlet portletNavigationTree']/dd/ul" theme="//*[@id='subnav-flattop']/ul" />
+
+
+    <!-- search gadget stuff -->
+    <replace content="//*[@id='portal-searchbox']/form"  theme="//*/div[@id='searchform']" />
+
+
+    <!-- Footer -->
+    <replace content="//*[@id='portal-footer']"
+        theme="//*/div[@id='footer']" />
+
+    <append content="//*[@id='kss-spinner']" theme="/html/body" />
+
+    <!-- Drop sidebar conditionally -->
+    <drop css:theme="#sidebar" if-content="not(//*[@id='portal-column-two'])" />
+
+
+    <!-- Drop unnecessary elements -->
+    <drop content="//*[@id='breadcrumbs-you-are-here']" />
+    <drop  theme="//*[@id='page-title']" />
+    <drop  theme="//*[@id='breadcrumbs']" />
+
+    <drop content="//*/dl[@class='portlet portletLogin']/dt" />
+    <drop content="//*/dl[@class='portlet portletNavigationTree']/dd/ul/li/div/a/img" />
+    <drop content="//*/li[@class='navTreeItem visualNoMarker']/div/a/img" />
+    <drop content='//*/dl[@class="portlet portletNavigationTree"]/dt' />
+
+    <drop content="//*[@id='link-presentation']" />
+    <drop content="//*[@id='content-history']" />
+    <drop content="//*[contains(concat(' ', normalize-space(@class), ' '), ' portletTopRight ')]" />
+    <drop content="//*[contains(concat(' ', normalize-space(@class), ' '), ' portletTopLeft ')]" />
+    <drop content="//*[contains(concat(' ', normalize-space(@class), ' '), ' portletBottomRight ')]" />
+    <drop content="//*[contains(concat(' ', normalize-space(@class), ' '), ' portletBottomLeft ')]" />
+    <drop content="//*[@id='contentBottomLeft']" />
+    <drop content="//*[@id='contentBottomRight']" />
+    <drop content="//*[@id='contentTopLeft']" />
+    <drop content="//*[@id='contentTopRight']" />
+    <drop content="//*[@id='portal-colophon']" />
+    <drop content="//*[@id='plone-contentmenu-factories']/dd/ul/li/a/img" />
+    <drop content="//*[@id='plone-contentmenu-factories']/dd/ul/li/a/img" />
+
+
+    <!-- drop content="//*[@id='portal-breadcrumbs']"
+        css:if-content=".feature" / -->
+
+    <!-- conditional Front page mojo  -->
+<!--
+    <drop theme="//*[@id='feature']"
+        css:if-content=".section-front-page" />
+-->
+
+<!-- works, but the opposite of what I want
+        <drop css:theme="#feature"
+         css:if-content="body.section-front-page" />
+-->
+    <!--
+    <prepend content="//*[@id='portal-personaltools']"
+             theme="//*[@id='colophon']" />
+    <append content="//*[@id='siteaction-plone_setup']"
+             theme="//*[@id='colophon']" />
+    -->
+
+    <!-- Bring the portlet columns -->
+    <!--
+     <drop content="//*[@id='portal-searchbox']/form/label" />
+     <drop content="//*[@id='portal-searchbox']/form/div/div[1]" />
+    -->
+    <!--drop theme="//*[@id='bottom-portlets']" if-content="not(//*[@id='portal-column-one']/div[@class='visualPadding']/*)"/-->
+
+    <!-- replace content="//*[@id='parent-fieldname-title']" theme="//*[@id='page-title']" / -->
+    <!-- replace content="//*[@id='content-core']" theme="//*[@id='content-core']" / -->
+    <!-- replace content="//*[@id='portal-breadcrumbs']" theme="//*[@id='breadcrumbs']" / -->
+
+    <!--
+     <drop content="//*[@id='portal-searchbox']/form/label" />
+     <drop content="//*[@id='portal-searchbox']/form/div/div[1]" />
+    -->
+    <!--
+    <drop theme="//*[@id='left-column-content']" if-content="not(//*[@id='portal-column-one']/div[@class='visualPadding']/*)" />
+
+    <copy content="//*[@id='portal-column-one']/div[@class='visualPadding']/*" theme="//*[@id='left-column-content']" />
+    <copy content="//*[@id='portal-column-two']/div[@class='visualPadding']/*" theme='//*[@id="right-column-content"]' />
+    //*[@id="left-column-wrapper"]
+
+    -->
+    <!--
+    All of these xpath selectors have more or less the same end-result effect
+    in the context of plone default skin replacement of the folder icon in the navigation portlet
+    .
+    /html/body/div/div/div[2]/div/div[3]/div/div/dl/dd/ul/li/div/a/img
+    //*/dl/dd/ul/li/div/a/img
+    //img[@alt='Large Folder']  # only folders
+    //*/dl[@class="portlet portletNavigationTree"]/dd/ul/li/div/a/img
+    //*/li[@class="navTreeItem visualNoMarker"]/div/a/img
+    <drop content="img[src $= '/folder_icon.gif']" />    # only folders
+    -->
+
+    <!-- Site actions
+    <replace content="//*[@id='portal-siteactions']" theme="//*[@id='portal-siteactions']" />
+    <replace content="//*[@id='portal-siteactions']" theme="//*[@id='portal-siteactions']" />
+    -->
+
+</rules>

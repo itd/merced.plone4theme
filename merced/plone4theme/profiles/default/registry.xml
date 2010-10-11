@@ -1,0 +1,58 @@
+<registry>
+  <record field="absolute_prefix"
+    interface="collective.xdv.interfaces.ITransformSettings"
+    name="collective.xdv.interfaces.ITransformSettings.absolute_prefix">
+    <value>/</value>
+  </record>
+  <record field="alternate_themes"
+    interface="collective.xdv.interfaces.ITransformSettings"
+    name="collective.xdv.interfaces.ITransformSettings.alternate_themes">
+    <value>/$|/front-page python://merced.plone4theme/xdvparts/static/frontpage.html python://merced.plone4theme/xdvparts/rules_frontpage.xml</value>
+  </record>
+  <record field="domains"
+    interface="collective.xdv.interfaces.ITransformSettings"
+    name="collective.xdv.interfaces.ITransformSettings.domains">
+    <value>
+      <element>merced.tool.net</element>
+    </value>
+  </record>
+  <record field="enabled"
+     interface="collective.xdv.interfaces.ITransformSettings"
+    name="collective.xdv.interfaces.ITransformSettings.enabled">
+    <value>True</value>
+  </record>
+  <record field="extraurl"
+    interface="collective.xdv.interfaces.ITransformSettings"
+    name="collective.xdv.interfaces.ITransformSettings.extraurl">
+    <value>python://merced.plone4theme/xdvparts/extra.xsl</value>
+  </record>
+  <record field="notheme"
+    interface="collective.xdv.interfaces.ITransformSettings"
+    name="collective.xdv.interfaces.ITransformSettings.notheme">
+    <value>
+      <element>^.*/referencebrowser_popup$</element>
+      <element>^.*/manage_(?!translations_form)[^/]+$</element>
+      <element>^.*/manage$</element>
+      <element>^.*/image_view_fullscreen$</element>
+      <element>^.*/emptypage$</element>
+      <element>^.*/error_log(/.*)?$</element>
+      <element>^.*/aq_parent(/.*)?$</element>
+      <element>^.*/portal_javascripts(/.*)?$</element>
+    </value>
+  </record>
+  <record field="read_network"
+    interface="collective.xdv.interfaces.ITransformSettings"
+    name="collective.xdv.interfaces.ITransformSettings.read_network">
+    <value>False</value>
+  </record>
+  <record field="rules"
+    interface="collective.xdv.interfaces.ITransformSettings"
+    name="collective.xdv.interfaces.ITransformSettings.rules">
+    <value>python://merced.plone4theme/xdvparts/rules.xml</value>
+  </record>
+  <record field="theme"
+    interface="collective.xdv.interfaces.ITransformSettings"
+    name="collective.xdv.interfaces.ITransformSettings.theme">>
+    <value>python://merced.plone4theme/xdvparts/index.html</value>
+  </record>
+</registry>

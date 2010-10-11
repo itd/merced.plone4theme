@@ -1,0 +1,156 @@
+/*
+  <dtml-with base_properties>
+  <dtml-call "REQUEST.set('portal_url', portal_url())">
+*/
+
+
+* { margin:0; padding: 0; }
+
+body {
+    font: 12pt Helvetica, Arial, sans-serif;
+    line-height: 1.25em;
+    margin: 0 auto;
+    background-color: #101010;
+    max-width: 1024px;
+}
+
+#portal-wrapper {
+background-color: #202020;
+}
+#portal-header {
+    background-color: #254e88;
+}
+
+#portal-column-wrapper {
+    padding: 0px;
+}
+
+
+#portal-columns {
+    background-image: url(bodybg.jpg);
+    margin-left:1%;
+    width:98%;
+    background-color: #222;
+}
+
+#portal-column-content{
+    background-color:#Eef3f7;
+}
+
+#main-content-block {
+    padding: 10px 0px;
+}
+
+#content-padding {
+    -moz-border-radius:12px 12px 12px 12px;
+    background-color:white;
+    float:left;
+    padding:10px 0 8px 9px;
+    position:relative;
+}
+
+
+#portal-footer {
+font-size:75%;
+line-height:2em;
+margin: 1em 0;
+padding:1em;
+background-color:  #254e88;
+}
+
+div.row {
+     margin: 0px;
+    }
+div.cell {
+    padding: 0px;
+    }
+h1, h2 {
+    letter-spacing: -0.05em;
+    margin: 10px;
+    text-align: justify;
+    line-height: 1.25em;
+}
+
+
+#left-column {
+	padding: 12px 0px 0px 8px;
+}
+
+
+.portletNavigationTree {
+	font-size:13px;
+	background-color:#fff;
+	text-transform:uppercase;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+}
+
+
+.portletNavigationTree ul,
+.navTreeCurrentNode ul, {
+	list-style:none;
+	margin:0;
+	padding:5px 0;
+}
+.subnav ul li {
+	display:block;
+	padding:5px 10px 5px 15px;
+}
+.subnav a:link, .subnav a:visited {
+	color:#898989;
+}
+.subnav li.current a:link,
+.subnav li.current a:visited,
+.subnav a:hover,
+.subnav li.navTreeCurrentNode a:link,
+.subnav li.navTreeCurrentNode a:visited {
+	color:#FFF;
+}
+
+
+.subnav li.current,
+.subnav li.navTreeCurrentNode {
+	background-image:url(&dtml-portal_url;/subnav-arrow.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+.subnav ul li ul li {
+	text-transform: none;
+	padding:5px 10px 5px 30px;
+}
+
+
+#subnav-flattop ul{
+	padding-left: 0px;
+	list-style: none;
+	margin: 0px;
+}
+
+
+.navTreeCurrentItem ul a {
+    color: orange;
+}
+
+.navTreeCurrentNode {
+	background-color: #254E88;
+}
+
+.navTreeCurrentNode a {
+    color: white;
+}
+.navTreeItemInPath {
+	background-color: #254E88;
+	color: white;
+}
+
+.navTree {
+
+}
+.navTreeItem .contenttype-folder  {
+  background: none;
+  padding: 0;
+}
+
+
+
+/* </dtml-with> */

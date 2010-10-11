@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    i18n_domain="merced.plone4theme">
+
+  <!-- File System Directory Views registration -->
+  <cmf:registerDirectory name="merced_images"/>
+  <cmf:registerDirectory name="merced_templates"/>
+  <cmf:registerDirectory name="merced_styles"/>
+  <cmf:registerDirectory name="merced_js"/>
+
+  <!-- Note: This could also be done for all folders at once
+       by replacing the previous lines with this one:
+  <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
+  -->
+
+</configure>

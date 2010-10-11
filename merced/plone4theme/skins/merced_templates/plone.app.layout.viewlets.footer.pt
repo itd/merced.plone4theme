@@ -1,0 +1,12 @@
+<div metal:define-macro="portal_footer"
+     i18n:domain="plone"
+     class="row">
+    <div class="cell width-full position-0">
+
+        <div id="portal-footer">
+
+        <image src="footer-slice.gif" alt="just a placeholder" title="Just a place holder" />
+        </div>
+
+    </div>
+</div>
