@@ -27,7 +27,7 @@ background-color: #202020;
 
 
 #portal-columns {
-    background-image: url(bodybg.jpg);
+    background-image: url(BG_interior.jpg);
     margin-left:1%;
     width:98%;
     background-color: #222;
